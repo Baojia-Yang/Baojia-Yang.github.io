@@ -5,9 +5,6 @@ date:   2022-11-21 22:37:19 +0800
 categories: jekyll update
 typora-copy-images-to: pic
 ---
-
-# 为什么出触发写这样的一个主题的文章
-
 # 图解go增量编译（go incremental builds）
 
 为什么要写这篇文章？
@@ -60,7 +57,7 @@ pkgMain依赖pkgA和pkgB为什么可以编译？这是因为go import的机制�
 
 改动之后的流程：
 
-![image-20221122234149539](https://github.com/Baojia-Yang/Baojia-Yang.github.io/blob/main/_posts/pic/image-20221122233700351.png?raw=true)
+![image-20221122234149539](https://github.com/Baojia-Yang/Baojia-Yang.github.io/blob/main/_posts/pic/image-20221122234149539.png?raw=true)
 
 编译日志：
 
@@ -90,7 +87,7 @@ go的编译器的设计有哪些特点：
 
 1， 不允许循环依赖。这让go编译的时候，pkg与pkg之间的网状结构更加的清晰，一张有向无环的图。这能带来很多好处，写编译器的逻辑更加的简单，并行编译的效率也奇高。
 
-2， 每个包就说明了他依赖的包。这样包的编译的依赖就解释得很清楚。其中还会有一些奇怪的现在，为什么go build *.go编译一个文件的时候，有时候有用有时候没有用（大家自己去悟一下）。我也是现在才搞懂的。
+2， 每个包就说明了他依赖的包。这样包的编译的依赖就解释得很清楚。其中还会有一些奇怪的现象，为什么go build *.go编译一个文件的时候，有时候报错有时候不报错（大家自己去悟一下）。我也是现在才搞懂的。
 
 。。。。
 
